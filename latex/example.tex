@@ -1,0 +1,321 @@
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+
+\documentclass{llncs}
+\usepackage[ansinew,utf8]{inputenc}
+%
+\usepackage{makeidx}  % allows for indexgeneration
+%
+\begin{document}
+%
+\frontmatter          % for the preliminaries
+%
+\pagestyle{headings}  % switches on printing of running heads
+\addtocmark{Bases de datos de grafos con manejo de datos espaciales} % additional mark in the TOC
+%
+\chapter*{Preface}
+%
+TODO: completar
+¿Qué ponemos acá?
+
+\vspace{1cm}
+\begin{flushright}\noindent
+April 1995\hfill Walter Olthoff\\
+Program Chair\\
+ECOOP'95
+\end{flushright}
+%
+\chapter*{Organization}
+ECOOP'95 is organized by the department of Computer Science, Univeristy
+of \AA rhus and AITO (association Internationa pour les Technologie
+Object) in cooperation with ACM/SIGPLAN.
+%
+\section*{Executive Commitee}
+\begin{tabular}{@{}p{5cm}@{}p{7.2cm}@{}}
+Conference Chair:&Ole Lehrmann Madsen (\AA rhus University, DK)\\
+Program Chair:   &Walter Olthoff (DFKI GmbH, Germany)\\
+Organizing Chair:&J\o rgen Lindskov Knudsen (\AA rhus University, DK)\\
+Tutorials:&Birger M\o ller-Pedersen\hfil\break
+(Norwegian Computing Center, Norway)\\
+Workshops:&Eric Jul (University of Kopenhagen, Denmark)\\
+Panels:&Boris Magnusson (Lund University, Sweden)\\
+Exhibition:&Elmer Sandvad (\AA rhus University, DK)\\
+Demonstrations:&Kurt N\o rdmark (\AA rhus University, DK)
+\end{tabular}
+%
+\section*{Program Commitee}
+\begin{tabular}{@{}p{5cm}@{}p{7.2cm}@{}}
+Conference Chair:&Ole Lehrmann Madsen (\AA rhus University, DK)\\
+Program Chair:   &Walter Olthoff (DFKI GmbH, Germany)\\
+Organizing Chair:&J\o rgen Lindskov Knudsen (\AA rhus University, DK)\\
+Tutorials:&Birger M\o ller-Pedersen\hfil\break
+(Norwegian Computing Center, Norway)\\
+Workshops:&Eric Jul (University of Kopenhagen, Denmark)\\
+Panels:&Boris Magnusson (Lund University, Sweden)\\
+Exhibition:&Elmer Sandvad (\AA rhus University, DK)\\
+Demonstrations:&Kurt N\o rdmark (\AA rhus University, DK)
+\end{tabular}
+%
+\begin{multicols}{3}[\section*{Referees}]
+V.~Andreev\\
+B\"arwolff\\
+E.~Barrelet\\
+H.P.~Beck\\
+G.~Bernardi\\
+E.~Binder\\
+P.C.~Bosetti\\
+Braunschweig\\
+F.W.~B\"usser\\
+T.~Carli\\
+A.B.~Clegg\\
+G.~Cozzika\\
+S.~Dagoret\\
+Del~Buono\\
+P.~Dingus\\
+H.~Duhm\\
+J.~Ebert\\
+S.~Eichenberger\\
+R.J.~Ellison\\
+Feltesse\\
+W.~Flauger\\
+A.~Fomenko\\
+G.~Franke\\
+J.~Garvey\\
+M.~Gennis\\
+L.~Goerlich\\
+P.~Goritchev\\
+H.~Greif\\
+E.M.~Hanlon\\
+R.~Haydar\\
+R.C.W.~Henderso\\
+P.~Hill\\
+H.~Hufnagel\\
+A.~Jacholkowska\\
+Johannsen\\
+S.~Kasarian\\
+I.R.~Kenyon\\
+C.~Kleinwort\\
+T.~K\"ohler\\
+S.D.~Kolya\\
+P.~Kostka\\
+U.~Kr\"uger\\
+J.~Kurzh\"ofer\\
+M.P.J.~Landon\\
+A.~Lebedev\\
+Ch.~Ley\\
+F.~Linsel\\
+H.~Lohmand\\
+Martin\\
+S.~Masson\\
+K.~Meier\\
+C.A.~Meyer\\
+S.~Mikocki\\
+J.V.~Morris\\
+B.~Naroska\\
+Nguyen\\
+U.~Obrock\\
+G.D.~Patel\\
+Ch.~Pichler\\
+S.~Prell\\
+F.~Raupach\\
+V.~Riech\\
+P.~Robmann\\
+N.~Sahlmann\\
+P.~Schleper\\
+Sch\"oning\\
+B.~Schwab\\
+A.~Semenov\\
+G.~Siegmon\\
+J.R.~Smith\\
+M.~Steenbock\\
+U.~Straumann\\
+C.~Thiebaux\\
+P.~Van~Esch\\
+from Yerevan Ph\\
+L.R.~West\\
+G.-G.~Winter\\
+T.P.~Yiou\\
+M.~Zimmer\end{multicols}
+%
+\section*{Sponsoring Institutions}
+%
+Bernauer-Budiman Inc., Reading, Mass.\\
+The Hofmann-International Company, San Louis Obispo, Cal.\\
+Kramer Industries, Heidelberg, Germany
+%
+\tableofcontents
+%
+\mainmatter              % start of the contributions
+%
+\title{Bases de datos de grafos con manejo de datos espaciales.
+Un análisis comparativo}
+%
+\titlerunning{Bases de datos de grafos con manejo de datos espaciales}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Federico Martinez\inst{1} \and Ariel Aizemberg\inst{2}}
+%
+\authorrunning{Federico Martinez et al.} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{Federico Martinez, Ariel Aizemberg}
+%
+\institute{Universidad Nacional de Quilmes, Roque Sáenz Peña 352, Bernal, Buenos Aires, Argentina,\\
+\email{federico.martinez@unq.edu.ar}
+\and
+Instituto Tecnologico Buenos Aires,
+Av. Madero 399, Buenos Aires, Argentina,\\
+\email{aaizemberg@itba.edu.ar}}
+
+\maketitle              % typeset the title of the contribution
+
+\begin{abstract} The abstract should summarize the contents of the
+paper using at least 70 and at most 150 words. It will be set in
+9-point font size and be inset 1.0 cm from the right and left margins.
+There will be two blank lines before and after the Abstract. \dots
+\keywords{computational geometry, graph theory, Hamilton cycles}
+\end{abstract} % 
+
+\section{Bases de datos de grafos con manejo de datos espaciales}
+\subsection{Introducción} % 
+Las bases de datos NoSQL han
+adquirido una gran popularidad en el último tiempo. Entre los
+distintos tipos que existen, las bases de datos de grafos se destacan
+por su capacidad de almacenar elementos de características diferentes,
+no estructuradas y fundamentalmente, las relaciones que existen entre
+ellos.
+
+En la actualidad existen varias bases de datos de grafos, tanto open
+source, como de código propietario. Son varias las que introducen la
+posibilidad de manejar además datos espaciales o georreferenciados.
+Entre ellas podemos citar: Neo4j\footnote{http://neo4j.com/}, ArangoDB\footnote{http://www.arangodb.com/}
+, OrientDB\footnote{http://www.orientechnologies.com/orientdb/}, Titan\footnote{http://thinkaurelius.github.io/titan/}; las
+cuales permiten en distinta medida almacenar y consultar datos
+espaciales. Las bases de datos de grafos son muy útiles cuando el
+problema que se quiere resolver tiene distintos tipos de entidades
+relacionadas entre sí.  Son eficientes para resolver problemas de
+búsquedas en grafos, pero sabemos que los datos almacenados suelen
+contener información espacial o geográfica. Entonces, nos preguntamos
+¿que pasa cuando incorporamos la componente espacial en nuestras
+consultas?
+
+Elegimos a Neo4j y ArangoDB ya que estas poseen manejo de datos
+geográficos sin necesidad de motores de indexado externos para
+realizar una comparación. Un ejemplo típico es una red social. En ella
+los usuarios son nodos en un grafo y la “amistad” entre dos usuarios
+es un eje que los relaciona. Estos nodos pueden tener propiedades como
+el nombre, edad, género, etc. Las fotos subidas por los usuarios
+pueden ser también un nodo, con otro conjunto de propiedades: url,
+fecha de publicación, etc. En este caso, pueden existir relaciones
+entre usuarios y fotos con distinta semántica: le gusta la imagen,
+comparte la imagen, está etiquetado en la imagen, etc. Cada una de
+estas relaciones puede modelarse con un eje. En este escenario,
+podemos pensar que una consulta típica es: ¿Cuáles son los amigos de
+mis amigos?
+
+Existen problemas donde estos nodos se encuentran distribuidos en el
+espacio, por ejemplo los nodos pueden representar ciudades y los ejes
+autopistas, rutas o calles entre ellos. Para estos casos es
+interesante contar con la capacidad de realizar consultas sobre la
+georeferenciación de los datos y no solo sobre sus relaciones, a fin
+de poder responder, por ejemplo, cual es el camino más corto entre dos
+ciudades.
+
+\subsection{Metodología}
+Para analizar las capacidades de manejo de datos geográficos que presentan ambas bases de datos decidimos utilizar un conjunto de datos proveniente del sitio openflights\footnote{ttp://openflights.org/data.html}. El mismo presenta información de 6977 aeropuertos, los cuales tienen, entre otros atributos, latitud y longitud. Además hay 5888 aerolíneas y 59036 rutas. Las rutas van de un aeropuerto a otro y son gestionadas por una aerolínea.
+
+\begin{itemize}
+\item Cada aeropuerto es un nodo, al igual que las aerolíneas y las rutas.
+\item Un eje entre una ruta y una aerolínea indica que ésta es responsable de la ruta.
+\item Las rutas pueden relacionarse con los aeropuertos mediante dos tipos distintos de ejes: Origen y Destino, los cuales indican, respectivamente, si el aeropuerto es donde la ruta comienza o termina.
+\end{itemize}
+
+Para el modelo de datos generado, realizamos las siguientes consultas:
+\begin{enumerate}
+\item Aeropuerto a menos de 100 kilómetros de la Ciudad de Buenos Aires.
+\item Aeropuertos a 100 kilómetros de la Ciudad de Buenos Aires que permiten viajar a Barajas.
+\item Itinerarios que parten de un aeropuerto a menos de 400 kilómetros de la Ciudad de Buenos Aires, que tengan una escala y terminan en Barajas.
+\item Itinerarios que parten de un aeropuerto a menos de 400 km de la Ciudad de Buenos Aires, tienen una escala y terminan a menos de 400 km de Chipre.
+\end{enumerate}
+
+\subsection{Resultados}
+Para cada consulta consideramos el tiempo de ejecución hasta obtener los resultados. Analizamos también el tiempo necesario para la carga inicial y el espacio necesario en disco para cada una de las bases. La carga de datos y los experimentos se ejecutaron sobre una máquina virtual, ésta dispone de 3 GB de RAM y 2 cores. La máquina física es un Core i5 4690 de 3.5 GHz con 16 GB de RAM.
+\begin{table}
+\caption{Resultados de los experimentos}
+\begin{center}
+\begin{tabular}{r@{\quad}ll}%{r@{\quad}rll}
+\hline
+\multicolumn{1}{l}{Experimento}&\multicolumn{1}{l}{Neo4J}&\multicolumn{1}{l}{ArangoDB}\\
+\hline\rule{0pt}{12pt}
+Carga & 20 minutos 27 segundos & 25 minutos 37 segundos \\
+Espacio en disco & 165.9 MB & 437.3 MB \\
+Consulta 1 & 0.063 segundos & 0.012 segundos \\
+Consulta 2 & 0.016 segundos & 0.052 segundos \\
+Consulta 3 & 0.227 segundos & 3.697 segundos \\
+Consulta 4 & 2.319 segundos & 4.901 segundos \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Conclusiones}
+
+Si bien ambas bases de datos proveen soporte para el manejo de datos geográficos y las dos funcionan muy bien para responder consultas sencillas, Neo4j logra imponerse como una mejor alternativa cuando las consultas requieren recorrer el grafo o funcionalidades más complejas como importar mapas.
+Si bien Arango logra resolver correctamente las consultas sencillas (por ejemplo la consulta 1, que no requería recorrer las relaciones del grafo, es resuelta más rápidamente por Arango), no está a la altura del soporte que brinda Neo4j.
+Las principales falencias que encontramos en ArangoDB son:
+Su lenguaje de consulta no parece estar pensado para recorrer grafos. Parece haber sido diseñado para trabajar con documentos y luego se le agregaron casi de manera ad-hoc nociones de grafos. Esto genera que escribir queries que combinen información espacial y recorrer el grafo sea ineficiente además de complejo.
+Si bien es muy bueno que la base brinde soporte geográfico nativo, el mismo es muy básico. Por esa razón es imposible escribir consultas que requieren de capacidades más complejas.
+ 
+El informe completo, las tablas, graficos y el código fuente del presente estudio, se puede consultar en la siguiente URL: 
+
+\textit{https://github.com/federicoemartinez/itba\_graphdb}
+
+
+%
+% ---- Bibliography ----
+%
+\begin{thebibliography}{5}
+%
+\bibitem {clar:eke}
+Clarke, F., Ekeland, I.:
+Nonlinear oscillations and
+boundary-value problems for Hamiltonian systems.
+Arch. Rat. Mech. Anal. 78, 315--333 (1982)
+
+\bibitem {clar:eke:2}
+Clarke, F., Ekeland, I.:
+Solutions p\'{e}riodiques, du
+p\'{e}riode donn\'{e}e, des \'{e}quations hamiltoniennes.
+Note CRAS Paris 287, 1013--1015 (1978)
+
+\bibitem {mich:tar}
+Michalek, R., Tarantello, G.:
+Subharmonic solutions with prescribed minimal
+period for nonautonomous Hamiltonian systems.
+J. Diff. Eq. 72, 28--55 (1988)
+
+\bibitem {tar}
+Tarantello, G.:
+Subharmonic solutions for Hamiltonian
+systems via a $\bbbz_{p}$ pseudoindex theory.
+Annali di Matematica Pura (to appear)
+
+\bibitem {rab}
+Rabinowitz, P.:
+On subharmonic solutions of a Hamiltonian system.
+Comm. Pure Appl. Math. 33, 609--633 (1980)
+
+\end{thebibliography}
+\addtocmark[2]{Author Index} % additional numbered TOC entry
+\renewcommand{\indexname}{Author Index}
+\printindex
+\clearpage
+\addtocmark[2]{Subject Index} % additional numbered TOC entry
+\markboth{Subject Index}{Subject Index}
+\renewcommand{\indexname}{Subject Index}
+\input{subjidx.ind}
+\end{document}
