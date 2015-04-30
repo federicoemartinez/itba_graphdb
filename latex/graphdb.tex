@@ -74,38 +74,28 @@ Por lo tanto, la posibilidad de manipular datos espaciales agrega valor a las BD
 
 Asimismo, la posibilidad de manipular este tipo de datos permite la integración, en forma natural entre los sistemas de información geográfica y las BDG.
 
-Actualmente existe una amplia variedad de BDG, tanto de codigo abierto como propietario y muchas de ellas pueden manejar, en mayor o menor medida, datos espaciales. Entre ellas podemos citar a Neo4j\cite{n4jsp}, ArangoDB\cite{adbgi}, OrientDB, Titan, etc.
+Actualmente existe una amplia variedad de BDG, tanto de codigo abierto como propietario y muchas de ellas pueden manejar, en mayor o menor medida, datos espaciales. Entre ellas podemos citar a Neo4j, ArangoDB, OrientDB, Titan, etc.
 
 En el presente trabajo comparamos la capacidad de dos BDG representativas y de amplia difusión, como Neo4j y ArangoDB, por manipular datos espaciales, centrándonos en la eficiencia para responder consultas, y en la capacidad y flexibilidad para representar y almacenar datos espaciales.
 
 \section{Metodología}
 
-Para realizar nuestro estudio utilizamos un conjuto de datos provenientes del sitio  openflights\footnote{http://openflights.org/data.html}. El mismo presenta información de 6.977 aeropuertos, los cuales tienen información, entre otras, de latitud y longitud. Hay además 5.888 aerolíneas y 59.036 rutas. Las rutas se asumen directas entre aeropuertos y son gestionadas por una aerolínea.
-
-\begin{itemize}
-\item Cada aeropuerto se representa con un nodo, al igual que las aerolíneas y las rutas.
-\item Un eje entre una ruta y una aerolínea indica que ésta es responsable de la ruta.
-\item Las rutas y los aeropuertos se relacionan entre sí mediante dos tipos de ejes: \textit{origen} y \textit{destino} indicando si un aeropuerto comienza y/o termina una ruta respectivamente.
-\end{itemize}
-
-\textit{(\textbf{AV} sugiere agregar un Diagrama del problema, a mi me parece que no entra)
-}
+Para realizar nuestro estudio utilizamos un conjuto de datos provenientes del sitio  openflights\footnote{http://openflights.org/data.html}. El mismo presenta información sobre aerolineas, aeropuertos y rutas entre ellos.
 
 A continuación y dado que éste es un estudio preliminar, elegimos un conjunto de consultas que consideramos representativas del uso de BDG extendidas con la posibilidad de manipular datos espaciales. En nuestro caso, analizamos las siguientes consultas:
 
 \begin{enumerate}
+\itemsep0em 
 \item Aeropuerto a menos de 100 kilómetros de la Ciudad de Buenos Aires.
 \item Aeropuertos a 100 kilómetros de la Ciudad de Buenos Aires que permiten viajar a Barajas.
 \item Itinerarios que parten de un aeropuerto a menos de 400 kilómetros de la Ciudad de Buenos Aires, que tengan una escala y terminan en Barajas.
 \item Itinerarios que parten de un aeropuerto a menos de 400 km de la Ciudad de Buenos Aires, tienen una escala y terminan a menos de 400 km de Chipre.
 \end{enumerate}
 
-Para cada consulta medimos el tiempo de ejecución.
-
-La carga de datos y los experimentos se realizaron sobre una máquina virtual de 3 GB de RAM. La máquina física es un Intel Core i5 4690 de 3,5 GHz con 16 Gb de RAM.
+Para cada consulta medimos el tiempo de ejecución. La carga de datos y los experimentos se realizaron sobre una máquina virtual de 3 GB de RAM. La máquina física es un Intel Core i5 4690 de 3,5 GHz con 16 Gb de RAM.
 
 Los resultados obtenidos se detallan a continuación:
-
+\vspace{-1em}
 \begin{table}
 % \caption{Resultados de los experimentos} 
 \begin{center}
@@ -124,6 +114,7 @@ Consulta 4 & 2.319 segundos & 4.901 segundos \\
 \end{center}
 \end{table}
 
+\vspace{-4em}
 \section{Discusión de los resultados}
 
 Si bien ambas bases de datos proveen soporte para el manejo de datos geográficos y las dos funcionan muy bien para responder consultas sencillas, Neo4j aparece como una mejor alternativa cuando las consultas requieren recorrer el grafo, o de funcionalidades más complejas como importar mapas.
@@ -132,7 +123,7 @@ Las principales falencias que encontramos en ArangoDB son:
 Su lenguaje de consulta no parece estar pensado para recorrer grafos. Esto hace que escribir consultas que combinen información espacial y recorrer el grafo sea ineficiente además de complejo.
 Si bien es muy bueno que la base brinde soporte geográfico nativo, el mismo es muy básico. Por esa razón es imposible escribir consultas que requieren de capacidades más complejas.
 
-\textit{agregar un poco sobre Neo4j para cerrar, yo creo que tenemos que decir que ArangoDB resuelve muy bien cuando trabajamos con puntos y medimos cercanía con una distancia circular, pero no podemos hacer consultas complejas, como que un punto este contenido en un polígono, creo que Neo4j lo permite y ArangoDB no}
+Neo4j por su parte brinda un soporte mucho mas avanzado para el manejo de datos geograficos, posibilitando realizar consultas mas complejas de manera eficiente.
 
 El informe completo, las tablas, gráficos y el código fuente del presente estudio, se puede consultar en la siguiente URL: http://goo.gl/HjbqXI
 
