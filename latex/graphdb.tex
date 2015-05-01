@@ -65,25 +65,21 @@ Depto. de Ingeniería Informática, ITBA, Buenos Aires, Argentina,\\
 \end{abstract} % 
 
 \section{Descripción del problema}
-
+\vspace{-0.5em}
 Dentro de las BD NoSQL, las Bases de Datos de Grafos (BDG) han cobrado popularidad en los últimos tiempos, debido al auge del análisis de las redes sociales.
-
 La gran mayoría de de los sistemas de BDG manejan datos típicamente alfanuméricos, sin embargo los objetos representados en lestos grafos poseen, casi siempre, características espaciales o se encuentran georeferenciados.
-
 Por lo tanto, la posibilidad de manipular datos espaciales agrega valor a las BDG, permitiendo consultas como "personas que viven a menos de 100 km una de otra, se conocen entre si, y tienen gustos similares.
-
 Asimismo, la posibilidad de manipular este tipo de datos permite la integración, en forma natural entre los sistemas de información geográfica y las BDG.
-
-Actualmente existe una amplia variedad de BDG, tanto de codigo abierto como propietario y muchas de ellas pueden manejar, en mayor o menor medida, datos espaciales. Entre ellas podemos citar a Neo4j, ArangoDB, OrientDB, Titan, etc.
+Actualmente existe una amplia variedad de BDG, tanto de codigo abierto como propietario y muchas de ellas pueden manejar, en mayor o menor medida, datos espaciales. Entre ellas podemos citar a Neo4j\cite{n4jsp}, ArangoDB\cite{adbgi}, OrientDB, Titan, etc.
 
 En el presente trabajo comparamos la capacidad de dos BDG representativas y de amplia difusión, como Neo4j y ArangoDB, por manipular datos espaciales, centrándonos en la eficiencia para responder consultas, y en la capacidad y flexibilidad para representar y almacenar datos espaciales.
 
 \section{Metodología}
-
+\vspace{-0.5em}
 Para realizar nuestro estudio utilizamos un conjuto de datos provenientes del sitio  openflights\footnote{http://openflights.org/data.html}. El mismo presenta información sobre aerolineas, aeropuertos y rutas entre ellos.
 
 A continuación y dado que éste es un estudio preliminar, elegimos un conjunto de consultas que consideramos representativas del uso de BDG extendidas con la posibilidad de manipular datos espaciales. En nuestro caso, analizamos las siguientes consultas:
-
+\vspace{-0.5em}
 \begin{enumerate}
 \itemsep0em 
 \item Aeropuerto a menos de 100 kilómetros de la Ciudad de Buenos Aires.
@@ -114,22 +110,23 @@ Consulta 4 & 2.319 segundos & 4.901 segundos \\
 \end{center}
 \end{table}
 
-\vspace{-4em}
+\vspace{-4.5em}
 \section{Discusión de los resultados}
-
+\vspace{-0.5em}
 Si bien ambas bases de datos proveen soporte para el manejo de datos geográficos y las dos funcionan muy bien para responder consultas sencillas, Neo4j aparece como una mejor alternativa cuando las consultas requieren recorrer el grafo, o de funcionalidades más complejas como importar mapas.
 
 Las principales falencias que encontramos en ArangoDB son:
 Su lenguaje de consulta no parece estar pensado para recorrer grafos. Esto hace que escribir consultas que combinen información espacial y recorrer el grafo sea ineficiente además de complejo.
 Si bien es muy bueno que la base brinde soporte geográfico nativo, el mismo es muy básico. Por esa razón es imposible escribir consultas que requieren de capacidades más complejas.
 
-Neo4j por su parte brinda un soporte mucho mas avanzado para el manejo de datos geograficos, posibilitando realizar consultas mas complejas de manera eficiente.
+Neo4j por su parte brinda un soporte mucho mas avanzado para el manejo de datos geograficos, posibilitando realizar consultas mas complejas de manera eficiente. No solo cuenta con mas operaciones para las consultas de datos espaciales y geometricos, sino que además se integra con los formatos mas comunes de este tipo de datos.
 
 El informe completo, las tablas, gráficos y el código fuente del presente estudio, se puede consultar en la siguiente URL: http://goo.gl/HjbqXI
 
 %
 % ---- Bibliography ----
 %
+\vspace{-1em}
 \begin{thebibliography}{5}
 %
 \bibitem {n4jsp}
